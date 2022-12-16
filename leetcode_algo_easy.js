@@ -25,10 +25,14 @@
 // nums is sorted in ascending order.
 
 var search = function(nums, target) {
-    let half =nums[nums.length/2]
+    let iHalf = Math.floor(nums.length/2)
+    let half =nums[iHalf]
     
+    if(nums[0] === target){
+        return 0
+    }
     if(half > target){
-        for(i=nums.length/2; i>0; i--){
+        for(i=iHalf; i>0; i--){
             if(nums[i] === target){
                 return i
             }
@@ -36,7 +40,7 @@ var search = function(nums, target) {
         }
         return -1
     }else if(half < target){
-            for(i=nums.length/2; i<nums.length; i++){
+            for(i=iHalf; i<nums.length; i++){
             if(nums[i] === target){
                 return i
             }
@@ -44,11 +48,12 @@ var search = function(nums, target) {
         }
         return -1
     }else if(half === target){
-        return nums.length/2
-    } 
+        return iHalf
+    } else{
+        return -1
+    }
 };
 
-search([-1,0,3,5,9,12],9);
-console.log(search([-1,0,3,5,9,12],9), 'binary search algo')
-console.log(search([-1,0,3,5,9,12],2), 'binary search algo')
+// console.log(search([-1,0,3,5,9,12],9), 'binary search algo')
+// console.log(search([-1,0,3,5,9,12],2), 'binary search algo')
 
