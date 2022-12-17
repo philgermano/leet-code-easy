@@ -186,20 +186,24 @@
 
 //SOLUTION
 var searchInsert = function(nums, target) {
+    console.log(nums,'list of nums');
+    console.log(target,'target')
     //do binary search but if found return value. if min and max are the same we return the mid spot modified for if value is lower or higher
     let min = 0;
-    let max = nums.length;
+    let max = nums.length -1;
     while(min<max){
         let mid = Math.floor((min+max)/2);
-        
+        console.log('min',min,'mid', mid, 'max', max, 'after mid set')
         if(mid === target){
             return mid;
         } else if(mid < target){
                 //bump up min
                 min = mid +1;
+                console.log('min',min,'mid', mid, 'max', max, 'after min adjust')
         }else if (mid > target){
                 //cut down max
                 max = mid -1;
+                console.log('min',min,'mid', mid, 'max', max, 'after max adjust')
         }
 
     } 
@@ -208,11 +212,13 @@ var searchInsert = function(nums, target) {
         return min +1
     }else{
         //insert if before
-        return min
+        return min -1
     }
 
 };
 
 console.log(searchInsert([1,3,5,6], 5))
+
+console.log(searchInsert([1,3,5,6], 2))
 
 //#endregion
