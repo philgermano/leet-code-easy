@@ -154,4 +154,65 @@
 //#endregion
 
 
+//35. Search Insert Position
+//#region 
+// Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
 
+// You must write an algorithm with O(log n) runtime complexity.
+
+ 
+
+// Example 1:
+
+// Input: nums = [1,3,5,6], target = 5
+// Output: 2
+// Example 2:
+
+// Input: nums = [1,3,5,6], target = 2
+// Output: 1
+// Example 3:
+
+// Input: nums = [1,3,5,6], target = 7
+// Output: 4
+ 
+
+// Constraints:
+
+// 1 <= nums.length <= 104
+// -104 <= nums[i] <= 104
+// nums contains distinct values sorted in ascending order.
+// -104 <= target <= 104
+
+
+//SOLUTION
+var searchInsert = function(nums, target) {
+    //do binary search but if found return value. if min and max are the same we return the mid spot modified for if value is lower or higher
+    let min = 0;
+    let max = nums.length;
+    while(min<max){
+        let mid = Math.floor((min+max)/2);
+        
+        if(mid === target){
+            return mid;
+        } else if(mid < target){
+                //bump up min
+                min = mid +1;
+        }else if (mid > target){
+                //cut down max
+                max = mid -1;
+        }
+
+    } 
+    if(nums[min] < target){
+        //insert it after
+        return min +1
+    }else{
+        //insert if before
+        return min
+    }
+
+};
+
+console.log(searchInsert([1,3,5,6], 5))
+
+//#endregion
