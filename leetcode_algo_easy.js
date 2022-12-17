@@ -303,27 +303,27 @@
 // Try to come up with as many solutions as you can. There are at least three different ways to solve this problem.
 // Could you do it in-place with O(1) extra space?
 
-var rotate = function(nums, k) {
-    //can pop off back and unshift to the front
-    //needed both for if it needs to keep rotating them rather than just shifting one section once.
-    if (k>nums.length){
-    for(i=k;i>0;i--){
+// var rotate = function(nums, k) {
+//     //can pop off back and unshift to the front
+//     //needed both for if it needs to keep rotating them rather than just shifting one section once.
+//     if (k>nums.length){
+//     for(i=k;i>0;i--){
         
-        //remove from the back
-        let last = nums.pop()
+//         //remove from the back
+//         let last = nums.pop()
 
-        //add to front
-        nums.unshift(last);
+//         //add to front
+//         nums.unshift(last);
 
-    }
-}else{
-    let splitOff = nums.splice(nums.length - k,k );
-    //splitOff = splitOff.concat(nums);
-    nums.unshift(...splitOff);
-}
-};
+//     }
+// }else{
+//     let splitOff = nums.splice(nums.length - k,k );
+//     //splitOff = splitOff.concat(nums);
+//     nums.unshift(...splitOff);
+// }
+// };
 
-console.log(rotate([1,2,3,4,5,6,7], 3));
+// console.log(rotate([1,2,3,4,5,6,7], 3));
 
 //#endregion
 
