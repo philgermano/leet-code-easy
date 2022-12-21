@@ -369,34 +369,60 @@
 //167. Two Sum II - Input Array Is Sorted
 //#region 
 
-var twoSum = function(numbers, target) {
-    ///possibly long way. get first number check arrray for a numebr to equal it out. if it hits a number bigger than the difference exit the array early
-    //can't use .map not build to allow you to exit the loop early.
+// var twoSum = function(numbers, target) {
+//     ///possibly long way. get first number check arrray for a numebr to equal it out. if it hits a number bigger than the difference exit the array early
+//     //can't use .map not build to allow you to exit the loop early.
 
-    for(i=0; i< numbers.length-1; i++){
-        while(numbers[i]=== numbers[i+1] && numbers[i]+numbers[i+1] !== target){
-            i++
-        }
-        for(j=numbers.length; j>=0; j--){
-            if(numbers[i] + numbers[j] === target && j!==i){
-                solutionArray.push(i+1,j+1);
-                break
-            };   
-        }
-        if(solutionArray.length === 2){
-            break
-        };
-    }
-return solutionArray
-};
+//     for(i=0; i< numbers.length-1; i++){
+//         while(numbers[i]=== numbers[i+1] && numbers[i]+numbers[i+1] !== target){
+//             i++
+//         }
+//         for(j=numbers.length; j>=0; j--){
+//             if(numbers[i] + numbers[j] === target && j!==i){
+//                 solutionArray.push(i+1,j+1);
+//                 break
+//             };   
+//         }
+//         if(solutionArray.length === 2){
+//             break
+//         };
+//     }
+// return solutionArray
+// };
 
-console.log(twoSum([2,7,11,15], 9), 'it wants [1,2]')
-console.log(twoSum([2,3,4], 6), 'it wants [1,3]')
-console.log(twoSum([-1,0], -1), 'it wants [1,2]')
-
+// console.log(twoSum([2,7,11,15], 9), 'it wants [1,2]')
+// console.log(twoSum([2,3,4], 6), 'it wants [1,3]')
+// console.log(twoSum([-1,0], -1), 'it wants [1,2]')
 
 //#endregion
 
+//344. Reverse String
+//#region 
+// Write a function that reverses a string. The input string is given as an array of characters s.
 
+// You must do this by modifying the input array in-place with O(1) extra memory.
 
+// Example 1:
 
+// Input: s = ["h","e","l","l","o"]
+// Output: ["o","l","l","e","h"]
+// Example 2:
+
+// Input: s = ["H","a","n","n","a","h"]
+// Output: ["h","a","n","n","a","H"]
+ 
+// Constraints:
+
+// 1 <= s.length <= 105
+// s[i] is a printable ascii character.
+
+var reverseString = function(s) {
+    //not sure if better way but can just reverse it with the array method
+    s.reverse()
+    return s
+};
+
+console.log(reverseString(["h","e","l","l","o"]), "hello reversed")
+console.log(reverseString(["H","a","n","n","a","h"]), "hannah reversed")
+
+//#endregion
