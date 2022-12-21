@@ -371,11 +371,12 @@
 
 var twoSum = function(numbers, target) {
     ///possibly long way. get first number check arrray for a numebr to equal it out. if it hits a number bigger than the difference exit the array early
-
-let solutionArray=[];
+    //can't use .map not build to allow you to exit the loop early.
 
     for(i=0; i< numbers.length-1; i++){
-
+        while(numbers[i]=== numbers[i+1] && numbers[i]+numbers[i+1] !== target){
+            i++
+        }
         for(j=numbers.length; j>=0; j--){
             if(numbers[i] + numbers[j] === target && j!==i){
                 solutionArray.push(i+1,j+1);
