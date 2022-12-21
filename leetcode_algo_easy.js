@@ -416,13 +416,33 @@
 // 1 <= s.length <= 105
 // s[i] is a printable ascii character.
 
-var reverseString = function(s) {
-    //not sure if better way but can just reverse it with the array method
-    s.reverse()
-    return s
-};
+// var reverseString = function(s) {
+//     //not sure if better way but can just reverse it with the array method
+//     s.reverse()
+//     return s
+// };
 
-console.log(reverseString(["h","e","l","l","o"]), "hello reversed")
-console.log(reverseString(["H","a","n","n","a","h"]), "hannah reversed")
+
+    //okay just run 2 variables for either end stop when they meet.
+    //every cycle just swap back and front from their position.
+
+//     let front = 0, back =s.length-1;
+
+//     while(front<back){
+//         let temp = s[front];
+//         s[front] = s[back];
+//         s[back] = temp;
+//         front++;
+//         back--;
+//     }
+//     return s
+// };
+// console.log(reverseString(["h","e","l","l","o"]), "hello reversed")
+// console.log(reverseString(["H","a","n","n","a","h"]), "hannah reversed")
 
 //#endregion
+
+
+
+
+
