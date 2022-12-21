@@ -366,6 +366,36 @@
 // console.log(moveZeroes([0]))
 //#endregion
 
+//167. Two Sum II - Input Array Is Sorted
+//#region 
+
+var twoSum = function(numbers, target) {
+    ///possibly long way. get first number check arrray for a numebr to equal it out. if it hits a number bigger than the difference exit the array early
+
+let solutionArray=[];
+
+    for(i=0; i< numbers.length-1; i++){
+
+        for(j=numbers.length; j>=0; j--){
+            if(numbers[i] + numbers[j] === target && j!==i){
+                solutionArray.push(i+1,j+1);
+                break
+            };   
+        }
+        if(solutionArray.length === 2){
+            break
+        };
+    }
+return solutionArray
+};
+
+console.log(twoSum([2,7,11,15], 9), 'it wants [1,2]')
+console.log(twoSum([2,3,4], 6), 'it wants [1,3]')
+console.log(twoSum([-1,0], -1), 'it wants [1,2]')
+
+
+//#endregion
+
 
 
 
