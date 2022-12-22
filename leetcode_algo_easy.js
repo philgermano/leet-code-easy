@@ -471,11 +471,16 @@
 var reverseWords = function(s) {
     
 let split =s.split(' ');
-split.map((word)=>{
+split.map((word, index)=>{
     //function to reverse each word
+    let wordSplit = word.split('');
+    wordSplit.reverse();
+    split[index] = wordSplit.join('')
 })
-//then function to join everything and return it
-console.log(split)
+//then join everything and return it
+s = split.join(' ')
+//console.log(s)
+return s
 };
 
 console.log(reverseWords("Let's take LeetCode contest"),"Let's take LeetCode contest")
