@@ -468,27 +468,130 @@
 // There is at least one word in s.
 // All the words in s are separated by a single space.
 
-var reverseWords = function(s) {
+// var reverseWords = function(s) {
     
-s =s.split(' ');
-s.map((word, index)=>{
-    //function to reverse each word
-    let wordSplit = word.split('');
-    wordSplit.reverse();
-    s[index] = wordSplit.join('')
-})
-//then join everything and return it
-s = s.join(' ')
-//console.log(s)
-return s
-};
+// s =s.split(' ');
+// s.map((word, index)=>{
+//     //function to reverse each word
+//     let wordSplit = word.split('');
+//     wordSplit.reverse();
+//     s[index] = wordSplit.join('')
+// })
+// //then join everything and return it
+// s = s.join(' ')
+// //console.log(s)
+// return s
+// };
 
-console.log(reverseWords("Let's take LeetCode contest"),"Let's take LeetCode contest")
-console.log(reverseWords("God Ding"),"God Ding")
+// console.log(reverseWords("Let's take LeetCode contest"),"Let's take LeetCode contest")
+// console.log(reverseWords("God Ding"),"God Ding")
 //#endregion
 
 
+//876. Middle of the Linked List
+//#region 
+// Given the head of a singly linked list, return the middle node of the linked list.
 
+// If there are two middle nodes, return the second middle node.
+
+// Example 1:
+// Input: head = [1,2,3,4,5]
+// Output: [3,4,5]
+// Explanation: The middle node of the list is node 3.
+
+// Example 2:
+// Input: head = [1,2,3,4,5,6]
+// Output: [4,5,6]
+// Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.
+ 
+// Constraints:
+
+// The number of nodes in the list is in the range [1, 100].
+// 1 <= Node.val <= 100
+
+var middleNode = function(head) {
+    
+};
+
+//OK first thing I need to use linked lists a bit to actually understand the data structure;
+class Node {
+    constructor(val) {
+        this.value = val;
+        this.next = null;
+    }
+}
+
+
+//linked list dgeneric work to get a better understanding of their structure and uses.
+//#region 
+const one = new Node(1);
+one.next = new Node(2);
+one.next.next = new Node(3);
+one.next.next.next = new Node(4);
+one.next.next.next.next = new Node(5);
+
+class SingleLinkedList{
+    constructor(){
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+    push(val){
+        const newNode = new Node(val);
+        if (!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+        }else{
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        this.length++
+        return this
+    };
+
+    pop(){
+        //case: empty list
+        if(!this.head) return
+
+        //case:one node
+        if(this.length === 1){
+            this.head = null;
+            this.tail = null;
+            this.length = 0;
+            return;
+        };
+
+        //case many nodes
+        let current = this.head;
+        let newTail = null;
+
+        while(current){
+            if (current.next){
+                newTail = current;
+            }
+            current = current.next;
+        }
+        const deletedNode = this.tail;
+        this.tail = newTail;
+        this.tail.next = null;
+        this.length--;
+        return deletedNode;
+    }
+}
+
+const list = new SingleLinkedList();
+list.push(1);
+console.log(list);
+list.push(2);
+console.log(list);
+list.pop();
+console.log(list);
+//console.log(one);
+//console.log(one.next.next);
+//#endregion
+
+
+//#endregion
 
 
 
