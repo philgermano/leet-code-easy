@@ -470,15 +470,15 @@
 
 var reverseWords = function(s) {
     
-let split =s.split(' ');
-split.map((word, index)=>{
+s =s.split(' ');
+s.map((word, index)=>{
     //function to reverse each word
     let wordSplit = word.split('');
     wordSplit.reverse();
-    split[index] = wordSplit.join('')
+    s[index] = wordSplit.join('')
 })
 //then join everything and return it
-s = split.join(' ')
+s = s.join(' ')
 //console.log(s)
 return s
 };
