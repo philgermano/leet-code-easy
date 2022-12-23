@@ -509,11 +509,17 @@
 // The number of nodes in the list is in the range [1, 100].
 // 1 <= Node.val <= 100
 
-var middleNode = function(head) {
-    
-};
+// var middleNode = function(head) {
+//     let end = head, middle = head;
+//     while(end!== null && end.next !== null){
+//         end = end.next.next;
+//         middle = middle.next
+//     }
+//     return middle;
+// };
 
-
+// console.log(middleNode([1,2,3,4,5]), '3,4,5 expected answer');
+// console.log(middleNode([1,2,3,4,5,6]), '4,5,6 expected answer');
 
 
 //linked list dgeneric work to get a better understanding of their structure and uses.
@@ -726,6 +732,52 @@ var middleNode = function(head) {
 //console.log(one);
 //console.log(one.next.next);
 //#endregion
+
+
+//#endregion
+
+//19. Remove Nth Node From End of List
+//#region 
+
+// Given the head of a linked list, remove the nth node from the end of the list and return its head.
+
+// Example 1:
+
+// Input: head = [1,2,3,4,5], n = 2
+// Output: [1,2,3,5]
+// Example 2:
+
+// Input: head = [1], n = 1
+// Output: []
+// Example 3:
+
+// Input: head = [1,2], n = 1
+// Output: [1]
+ 
+// Constraints:
+// The number of nodes in the list is sz.
+// 1 <= sz <= 30
+// 0 <= Node.val <= 100
+// 1 <= n <= sz
+ 
+var removeNthFromEnd = function(head, n) {
+    
+    let current = head, len=1;
+    while( current.next){
+        //go through and find length
+        current = current.next;
+        len++;
+    };
+    current = head;
+    for(i=n; 1<len; i++){
+         current = current.head;
+    };
+    current.next = current.next.next;
+};
+
+console.logs(removeNthFromEnd([1,2,3,4,5],2),'expects 1,2,3,4');
+console.logs(removeNthFromEnd([1],1),'expects []');
+console.logs(removeNthFromEnd([1,2],1),'expects 1');
 
 
 //#endregion
