@@ -828,15 +828,15 @@ var lengthOfLongestSubstring = function(s) {
     let split = s.split('');
     let largest = '';
     //console.log(split)
-    for(i=0; i<split.length-1;i++){
+    for(i=0; i<=split.length-1;i++){
         //console.log('is running')
         for(j=i+1; j<split.length;j++){
             //add the letter if that substring does not already contain the new letter;
             if(!split[i].includes(split[j])){
 
             split[i]= split[i]+split[j]
-            console.log(split[j],'splitJ')
-            console.log(split[i],'splitI')
+            //console.log(split[j],'splitJ')
+            //console.log(split[i],'splitI')
             }else{
                 break;
             }
@@ -845,7 +845,7 @@ var lengthOfLongestSubstring = function(s) {
         }
         if(split[i].length > largest.length){
                 largest = split[i];
-                console.log(largest,'largest')
+                //console.log(largest,'largest')
             }
     }
     return largest.length;
@@ -854,6 +854,8 @@ var lengthOfLongestSubstring = function(s) {
 console.log(lengthOfLongestSubstring("abcabcbb"),"wants 'abc'");
 console.log(lengthOfLongestSubstring("bbbbb"),"wants 'bbbbb'");
 console.log(lengthOfLongestSubstring("pwwkew"),"wants 'wke'");
+
+console.log(lengthOfLongestSubstring(" "),"wants 1");
 //#endregion
 
 
