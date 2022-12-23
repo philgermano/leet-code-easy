@@ -760,24 +760,37 @@
 // 0 <= Node.val <= 100
 // 1 <= n <= sz
  
-var removeNthFromEnd = function(head, n) {
-    
-    let current = head, len=1;
-    while( current.next){
-        //go through and find length
-        current = current.next;
-        len++;
-    };
-    current = head;
-    for(i=n; 1<len; i++){
-         current = current.head;
-    };
-    current.next = current.next.next;
-};
+// var removeNthFromEnd = function(head, n) {
+//     //have 2 variables run through. 1 rams into the end and the other stops at the removal spot.delay seconds start by n
+//         if(head === null || head.next === null){
+//             //account for ones thatll be empty
+//             return null;
+//         };
 
-console.logs(removeNthFromEnd([1,2,3,4,5],2),'expects 1,2,3,4');
-console.logs(removeNthFromEnd([1],1),'expects []');
-console.logs(removeNthFromEnd([1,2],1),'expects 1');
+       
+//     let firstMark = head, secondMark = head, go=0;
+    
+//     while(firstMark){
+//         firstMark = firstMark.next;
+        
+//         if(go>n){
+//             secondMark = secondMark.next;
+//         }
+//            go++; 
+//     }
+//             //catch that it wants first removed
+//         if(go === n){
+//             return head.next;
+//         }
+
+//         //secondMark should be right before the element to remove so just make its next = next.next
+//         secondMark.next = secondMark.next.next
+//     return head;
+// };
+
+// console.logs(removeNthFromEnd([1,2,3,4,5],2),'expects 1,2,3,4');
+// console.logs(removeNthFromEnd([1],1),'expects []');
+// console.logs(removeNthFromEnd([1,2],1),'expects 1');
 
 
 //#endregion
